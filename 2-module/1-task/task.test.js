@@ -44,7 +44,7 @@ describe('2-module-1-task', () => {
       currency: 'USD',
       isPayed: false
     };
-
+    
     expect(sumSalary(salaries)).toEqual(0);
   });
 });

@@ -1,3 +1,6 @@
 function ucFirst(str) {
-  // ваш код...
+
+  const firstCapitalized = str.charAt(0).toUpperCase() + str.slice(1);
+  
+  return firstCapitalized;
 }
