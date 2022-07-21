@@ -8,26 +8,26 @@
 //     return factorial;
 // }
 
-// function factorial(n) {
-//   let factorial = 1;
-
-//   while (n > 0) {
-//     factorial *= n;
-//     n -= 1;
-//   }
-
-//   return factorial;
-
-// }
-
 function factorial(n) {
-  if (n === 0) {
-      return 1;
+  let factorial = 1;
+
+  while (n > 0) {
+    factorial *= n;
+    n -= 1;
   }
-  else {
-    return n * (factorial(n - 1));
-  }
+
+  return factorial;
+
 }
+
+// function factorial(n) {
+//   if (n === 0) {
+//       return 1;
+//   }
+//   else {
+//     return n * (factorial(n - 1));
+//   }
+// }
 
 console.log(factorial(0));
 console.log(factorial(1));

@@ -4,9 +4,3 @@ function ucFirst(str) {
   
   return firstCapitalized;
 }
-
-const str = prompt('Input string', '');
-
-console.log(ucFirst(str));
-
-// Тест пропустил, но ругался, хотелось бы знать почему
