@@ -6,15 +6,14 @@ function highlight(table) {
     const gender = tr.cells[2].textContent;
     const age = tr.cells[1].textContent;
 
-    const className1 = status === 'true' ? 'available' : 'unavailable';
+    const className = status === 'true' ? 'available' : 'unavailable';
     
-    status ? tr.classList.add(className1) : tr.setAttribute('hidden',true);
-    
+    status ? tr.classList.add(className) : tr.setAttribute('hidden',true);
+
     gender === "m" ? tr.classList.add('male') : tr.classList.add('female');
+
+    age < 18 ? tr.style.textDecoration = 'line-through' : null
     
-    if (age < '18') {
-      tr.style.textDecoration = 'line-through';
-    }
   }
 }
 
