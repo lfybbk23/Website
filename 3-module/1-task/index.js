@@ -1,4 +1,4 @@
 function namify(users) {
-  return users
-  .map(users => users.name)
-}
+
+    return users.map(user => user.name);
+};
