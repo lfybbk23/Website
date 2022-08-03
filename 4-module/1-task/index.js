@@ -14,4 +14,4 @@ function makeFriendsList(arr) {
     }
 
   return list;
-};
+}
