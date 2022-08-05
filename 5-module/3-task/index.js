@@ -1,21 +1,26 @@
 function initCarousel() {
 
   const carouselInner = document.querySelector(".carousel__inner");
+  const slideWidth = document.querySelector(".carousel__inner").offsetWidth;
   const nextSlide = document.querySelector('.carousel__arrow_right');
   const prevSlide = document.querySelector('.carousel__arrow_left');
-  prevSlide.style.display = 'none'
+  const counter = 0;
+
+  carouselArrowDisplay = () => {
+    counter > 2 ? nextSlide.style.display = 'none' : nextSlide.style.display = '';
+    counter > 0 ? prevSlide.style.display = '' : prevSlide.style.display = 'none';
+  }
+  carouselArrowDisplay();
 
   nextSlide.addEventListener("click", () => {
-    carouselInner.style.transform = `translateX(-500px)`;
-    nextSlide.style.display = 'none'
-    
-  });
+    counter++;
+    carouselInner.style.transform = 'translateX(' + (-slideWidth * counter) + 'px)';
+    carouselArrowDisplay();
+  })
 
   prevSlide.addEventListener("click", () => {
-    carouselInner.style.transform = `translateX(-1000px)`;
-    prevSlide.style.display = ''
-  });
-
-  
-  
-}
+    counter--;
+    carouselInner.style.transform = 'translateX(' + (-slideWidth * counter) + 'px)';
+    carouselArrowDisplay();
+  })
+};
