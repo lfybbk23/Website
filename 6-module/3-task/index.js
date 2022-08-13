@@ -33,6 +33,7 @@ export default class Carousel {
     const buttons = Array.from(this.elem.querySelectorAll('.carousel__button'));
     buttons.forEach((button) => {button.addEventListener('click', this.onAddButtonClick) });
   }
+
   template() {
     return this.arr.map(obj => `
       <div class="carousel__slide carousel" data-id="${obj.id}">
@@ -46,10 +47,10 @@ export default class Carousel {
         </div>
       </div>
       `).join('');
-    } 
+  } 
 
   slideTurnOver(){
-    let elem = this.elem;
+    const elem = this.elem;
     const nextSlide = elem.querySelector('.carousel__arrow_right');
     const prevSlide = elem.querySelector('.carousel__arrow_left');
     const slidesLength = elem.querySelectorAll('.carousel__button').length - 1;
@@ -59,8 +60,8 @@ export default class Carousel {
     nextSlide.addEventListener('click', () => translate(1));
 
     function translate(n) {
-      let carouselInner = elem.querySelector('.carousel__inner');
-      let slideWidth = carouselInner.offsetWidth;
+      const carouselInner = elem.querySelector('.carousel__inner');
+      const slideWidth = carouselInner.offsetWidth;
       currentSlide -= n;
       carouselInner.style.transform = `translateX(${currentSlide * slideWidth}px)`;
       currentSlide == -slidesLength ? nextSlide.style.display = 'none' : nextSlide.style.display = '';
@@ -69,7 +70,7 @@ export default class Carousel {
   };
 
   onAddButtonClick = (event) => {
-    let target = event.target;
+    const target = event.target;
     const addProductEvent = new CustomEvent("product-add",
       {
         detail: target.closest('div[data-id]').getAttribute('data-id'),
