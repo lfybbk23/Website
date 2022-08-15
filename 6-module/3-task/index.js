@@ -56,10 +56,10 @@ export default class Carousel {
     const slidesLength = elem.querySelectorAll('.carousel__button').length - 1;
     prevSlide.style.display = 'none';
     let currentSlide = 0;
-    prevSlide.addEventListener('click', () => translate(-1));
-    nextSlide.addEventListener('click', () => translate(1));
+    prevSlide.addEventListener('click', () => translateX(-1));
+    nextSlide.addEventListener('click', () => translateX(1));
 
-    function translate(n) {
+    function translateX(n) {
       const carouselInner = elem.querySelector('.carousel__inner');
       const slideWidth = carouselInner.offsetWidth;
       currentSlide -= n;
@@ -67,7 +67,7 @@ export default class Carousel {
       currentSlide == -slidesLength ? nextSlide.style.display = 'none' : nextSlide.style.display = '';
       currentSlide == 0 ? prevSlide.style.display = 'none' : prevSlide.style.display = '';
     }
-  };
+  }
 
   onAddButtonClick = (event) => {
     const target = event.target;
