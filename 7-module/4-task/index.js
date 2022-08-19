@@ -99,13 +99,6 @@ export default class StepSlider {
     sliderThumb.ondragstart = () => false;
 
     document.body.addEventListener('pointermove', this.onThumbMove);
-
-    // const sliderChange = new CustomEvent('slider-change',
-    //   {
-    //     detail: approximateValue,
-    //     bubbles: true
-    //   });
-    //   this.elem.dispatchEvent(sliderChange);
   }
 
   onThumbMove = (event) => {
@@ -128,22 +121,12 @@ export default class StepSlider {
     activeStep.classList.add('slider__step-active');
 
     const sliderThumb = this.elem.querySelector('.slider__thumb');
-    // const slider = document.querySelector('.slider');
-    // slider.classList.add('slider_dragging');
     sliderThumb.style.left = `${leftPercents}%`;
     const sliderProgress = this.elem.querySelector('.slider__progress');
     sliderProgress.style.width = `${leftPercents}%`;
 
     sliderThumb.ondragstart = () => false;
     document.body.addEventListener('pointerup', this.onThumbUp);
-
-
-    // const sliderChange = new CustomEvent('slider-change',
-    //   {
-    //     detail: approximateValue,
-    //     bubbles: true
-    //   });
-    //   this.elem.dispatchEvent(sliderChange);
   }
 
   onThumbUp = (event) => {

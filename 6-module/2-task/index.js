@@ -45,5 +45,3 @@ export default class ProductCard {
     return this.#elem;
   }
 }
-
-
