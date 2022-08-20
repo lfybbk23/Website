@@ -11,7 +11,7 @@
  *          city: 'Petrozavodsk'
  *      }
  *
- */<<<<<<< master
+ */
 export default class UserTable {
   arr;
   elem;
