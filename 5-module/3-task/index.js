@@ -11,6 +11,10 @@ function initCarousel() {
     counter > 2 ? nextSlide.style.display = 'none' : nextSlide.style.display = '';
     counter > 0 ? prevSlide.style.display = '' : prevSlide.style.display = 'none';
   }
+  prevSlide.addEventListener("click", () => {
+    carouselInner.style.transform = `translateX(-1000px)`;
+    prevSlide.style.display = ''
+  });
 
   carouselArrowDisplay();
   
